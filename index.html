@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NANCY SILK — Concept Board & Game Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Archivo:wght@300;400;500;600&family=Spline+Sans+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14100e;
+  --ink-2:#1d1815;
+  --ink-3:#2a221d;
+  --champagne:#e9dcc8;
+  --champagne-dim:#b3a48c;
+  --oxblood:#7e2d26;
+  --oxblood-bright:#a83c32;
+  --coral:#ff6b52;
+  --gold:#c9a35c;
+  --line:rgba(233,220,200,.14);
+  --ok:#7da87b;
+  --warn:#c9a35c;
+  --risk:#c96b5c;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);
+  color:var(--champagne);
+  font-family:'Archivo',sans-serif;
+  font-weight:300;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+/* grain overlay removed — SVG feTurbulence fixed overlays rasterize black on some compositors */
+.wrap{max-width:1280px;margin:0 auto;padding:0 48px}
+@media(max-width:760px){.wrap{padding:0 20px}}
+
+/* ---------- hero ---------- */
+.hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;position:relative;border-bottom:1px solid var(--line)}
+.hero-bg{position:absolute;inset:0;overflow:hidden}
+.hero-bg img{position:absolute;right:-4%;top:0;height:100%;width:52%;object-fit:cover;opacity:.55;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,black 35%);mask-image:linear-gradient(to right,transparent 0%,black 35%)}
+.kicker{font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.hero h1{
+  font-family:'Fraunces',serif;font-weight:300;font-size:clamp(64px,10vw,150px);
+  line-height:.94;letter-spacing:-.02em;margin:24px 0 8px;position:relative;z-index:2;
+}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{max-width:520px;font-size:17px;color:var(--champagne-dim);position:relative;z-index:2;margin-top:20px}
+.hero-meta{display:flex;gap:40px;margin-top:56px;font-family:'Spline Sans Mono',monospace;font-size:12px;color:var(--champagne-dim);position:relative;z-index:2;flex-wrap:wrap}
+.hero-meta b{display:block;color:var(--champagne);font-size:20px;font-weight:500;margin-top:4px}
+
+/* ---------- sections ---------- */
+section{padding:110px 0;border-bottom:1px solid var(--line);position:relative}
+.snum{
+  font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(90px,12vw,170px);
+  color:transparent;-webkit-text-stroke:1px rgba(233,220,200,.18);line-height:1;position:absolute;top:60px;right:48px;user-select:none
+}
+h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(36px,4.6vw,58px);line-height:1.05;letter-spacing:-.01em;margin:18px 0 16px;max-width:800px}
+h2 em{font-style:italic;color:var(--gold)}
+.lede{max-width:640px;color:var(--champagne-dim);font-size:17px}
+
+.chip{display:inline-block;font-family:'Spline Sans Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border:1px solid;border-radius:2px;margin-right:8px}
+.chip.ok{color:var(--ok);border-color:rgba(125,168,123,.5)}
+.chip.warn{color:var(--warn);border-color:rgba(201,163,92,.5)}
+.chip.risk{color:var(--risk);border-color:rgba(201,107,92,.5)}
+
+/* stat band */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:64px}
+.stat{background:var(--ink-2);padding:34px 28px}
+.stat .v{font-family:'Fraunces',serif;font-size:44px;font-weight:300;color:var(--champagne);line-height:1}
+.stat .v span{color:var(--gold);font-size:24px}
+.stat .l{font-size:13px;color:var(--champagne-dim);margin-top:12px;line-height:1.5}
+@media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* facts */
+.facts{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media(max-width:900px){.facts{grid-template-columns:1fr}}
+.fact{border:1px solid var(--line);background:var(--ink-2);padding:28px 30px;position:relative}
+.fact h4{font-family:'Fraunces',serif;font-weight:400;font-size:21px;margin:14px 0 10px;line-height:1.3}
+.fact p{font-size:14.5px;color:var(--champagne-dim)}
+.fact .src{font-family:'Spline Sans Mono',monospace;font-size:11px;color:rgba(233,220,200,.4);margin-top:14px;display:block}
+
+/* supplier table */
+table{width:100%;border-collapse:collapse;margin-top:48px;font-size:14px}
+th{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);text-align:left;padding:14px 16px;border-bottom:1px solid var(--line)}
+td{padding:16px;border-bottom:1px solid var(--line);color:var(--champagne-dim);vertical-align:top}
+td:first-child{color:var(--champagne);font-weight:400}
+.tscroll{overflow-x:auto}
+
+/* momme */
+.momme{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:56px}
+@media(max-width:900px){.momme{grid-template-columns:1fr}}
+.mcard{border:1px solid var(--line);padding:34px 30px;background:var(--ink-2)}
+.mcard.reco{border-color:var(--gold);background:linear-gradient(180deg,rgba(201,163,92,.08),var(--ink-2))}
+.mcard .mm{font-family:'Fraunces',serif;font-size:58px;font-weight:300;line-height:1}
+.mcard .mm span{font-size:20px;color:var(--gold)}
+.mcard h5{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:14px 0 10px}
+.mcard p{font-size:14px;color:var(--champagne-dim)}
+
+/* competitor ads */
+.adgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:56px}
+@media(max-width:900px){.adgrid{grid-template-columns:1fr}}
+.ad{border:1px solid var(--line);background:var(--ink-2)}
+.ad img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;filter:saturate(.92)}
+.ad .body{padding:24px 26px}
+.ad .brand{display:flex;justify-content:space-between;align-items:baseline;font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.ad .brand b{color:var(--champagne);font-weight:500}
+.ad .brand span{color:var(--gold)}
+.ad p{font-size:13.5px;color:var(--champagne-dim);margin-top:12px}
+.ad .quote{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--champagne);margin-top:12px;border-left:2px solid var(--oxblood-bright);padding-left:14px}
+
+/* concepts */
+.concept{margin-top:90px}
+.concept-head{display:flex;align-items:baseline;gap:26px;flex-wrap:wrap}
+.cnum{font-family:'Spline Sans Mono',monospace;color:var(--gold);font-size:13px;letter-spacing:.3em}
+.concept h3{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(42px,6vw,84px);line-height:1;letter-spacing:-.01em}
+.concept h3 em{font-style:italic;color:var(--gold)}
+.concept .tag{font-family:'Spline Sans Mono',monospace;font-size:12px;color:var(--champagne-dim);letter-spacing:.12em;text-transform:uppercase}
+.cgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;margin-top:36px}
+@media(max-width:900px){.cgrid{grid-template-columns:1fr}}
+.cgrid .imgs{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.cgrid .imgs.single{grid-template-columns:1fr}
+.cgrid img{width:100%;display:block;border:1px solid var(--line)}
+.cbody{border:1px solid var(--line);background:var(--ink-2);padding:36px 34px;align-self:start}
+.cbody p{font-size:15px;color:var(--champagne-dim);margin-bottom:16px}
+.cbody .row{display:flex;gap:12px;border-top:1px solid var(--line);padding:13px 0;font-size:13.5px}
+.cbody .row .k{font-family:'Spline Sans Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);min-width:110px;padding-top:2px}
+.reco-band{margin-top:36px;border:1px solid var(--gold);background:linear-gradient(90deg,rgba(201,163,92,.1),transparent);padding:26px 30px;font-size:15px}
+.reco-band b{font-family:'Fraunces',serif;font-style:italic;font-weight:400;color:var(--gold);font-size:18px}
+
+/* angles */
+.angles{margin-top:56px;counter-reset:angle}
+.angle{display:grid;grid-template-columns:70px 1fr 210px;gap:24px;padding:24px 0;border-bottom:1px solid var(--line);align-items:baseline}
+@media(max-width:760px){.angle{grid-template-columns:50px 1fr}.angle .fmt{grid-column:2}}
+.angle::before{counter-increment:angle;content:counter(angle,decimal-leading-zero);font-family:'Fraunces',serif;font-style:italic;font-size:26px;color:var(--gold)}
+.angle h4{font-family:'Fraunces',serif;font-weight:400;font-size:20px;line-height:1.3}
+.angle p{font-size:13.5px;color:var(--champagne-dim);margin-top:6px;max-width:640px}
+.angle .fmt{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--champagne-dim);text-align:right}
+@media(max-width:760px){.angle .fmt{text-align:left}}
+
+/* pricing */
+.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:56px}
+@media(max-width:900px){.price-grid{grid-template-columns:repeat(2,1fr)}}
+.pcell{background:var(--ink-2);padding:30px 26px}
+.pcell.hero-sku{background:linear-gradient(180deg,rgba(126,45,38,.25),var(--ink-2))}
+.pcell .n{font-family:'Fraunces',serif;font-size:20px;font-weight:400}
+.pcell .pr{font-family:'Fraunces',serif;font-style:italic;font-size:34px;color:var(--gold);margin:10px 0 6px}
+.pcell .d{font-size:12.5px;color:var(--champagne-dim);line-height:1.55}
+.pcell .m{font-family:'Spline Sans Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:var(--ok);margin-top:12px;display:block}
+
+/* gameplan */
+.phase{display:grid;grid-template-columns:190px 1fr;gap:34px;padding:44px 0;border-bottom:1px solid var(--line)}
+@media(max-width:760px){.phase{grid-template-columns:1fr;gap:12px}}
+.phase .when{font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);padding-top:8px}
+.phase .when b{display:block;font-family:'Fraunces',serif;font-style:italic;font-size:30px;color:var(--champagne);font-weight:300;letter-spacing:0;text-transform:none;margin-top:6px}
+.phase h4{font-family:'Fraunces',serif;font-weight:400;font-size:26px;margin-bottom:14px}
+.phase ul{list-style:none}
+.phase li{padding:9px 0 9px 26px;position:relative;font-size:14.5px;color:var(--champagne-dim);border-bottom:1px dashed rgba(233,220,200,.08)}
+.phase li::before{content:"—";position:absolute;left:0;color:var(--oxblood-bright)}
+.phase li b{color:var(--champagne);font-weight:500}
+
+/* risks */
+.risks{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:56px}
+@media(max-width:900px){.risks{grid-template-columns:1fr}}
+.risk-card{border:1px solid rgba(201,107,92,.35);background:rgba(126,45,38,.07);padding:26px 28px}
+.risk-card h4{font-family:'Fraunces',serif;font-weight:400;font-size:19px;margin-bottom:8px}
+.risk-card p{font-size:13.5px;color:var(--champagne-dim)}
+
+footer{padding:70px 0 90px;font-family:'Spline Sans Mono',monospace;font-size:11.5px;color:rgba(233,220,200,.45);line-height:2}
+footer a{color:var(--champagne-dim)}
+
+@media (prefers-reduced-motion: no-preference){
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"><img src="images/afterdark-01.jpg" alt=""></div>
+  <div class="wrap">
+    <div class="kicker">Hello Nancy — New Line Proposal · 15 Research Loops · July 7, 2026</div>
+    <h1>NANCY<br><em>SILK</em></h1>
+    <p class="hero-sub">A mulberry-silk intimates line that only an intimacy brand can launch honestly. Sleepwear brands sell sleep. Lingerie brands sell looks. Nancy sells what happens in between — and the sourcing math says we can test it for the cost of one day of ad spend.</p>
+    <div class="hero-meta">
+      <div>CATEGORY GROWTH<b>+$40B by 2030</b></div>
+      <div>TEST INVENTORY RISK<b>50–150 pcs/style</b></div>
+      <div>GROSS MARGIN POTENTIAL<b>80%+</b></div>
+      <div>SPEC → INVENTORY<b>4–8 weeks</b></div>
+    </div>
+  </div>
+</div>
+
+<!-- 00 INSPIRATION -->
+<section id="insp">
+  <div class="snum">00</div>
+  <div class="wrap">
+    <div class="kicker">Ideas to Inspire</div>
+    <h2>The world we're <em>selling</em></h2>
+    <p class="lede">Not sleepwear. Not lingerie. The hour in between — the robe on the doorframe, the tray on the sheets, the box on the pillow. Five ideas that set the tone, then the mood board.</p>
+
+    <div class="angles" style="margin-top:44px">
+      <div class="angle"><div><h4>"Worn After Dark"</h4><p>The campaign line. Every asset answers one question: what was this worn for? The robe in the doorway, the slip over the chair. Desire implied, never shown.</p></div><span class="fmt">Campaign world</span></div>
+      <div class="angle"><div><h4>The Morning After Collection</h4><p>Sell the aftermath, not the act: two espresso cups, crumpled silk, unhurried light. The most Meta-safe way to say everything.</p></div><span class="fmt">Creative territory</span></div>
+      <div class="angle"><div><h4>Silk receipts</h4><p>Momme weight embroidered inside every piece. Honesty as the luxury flex — while SilkSilky screams 70% off, we publish the spec.</p></div><span class="fmt">Brand pillar</span></div>
+      <div class="angle"><div><h4>The box does the talking</h4><p>Factory gift box engineered for the camera: magnetic lid, tissue, ribbon, a card you'd actually keep. The unboxing IS the funnel.</p></div><span class="fmt">Product design</span></div>
+      <div class="angle"><div><h4>Says it without saying it</h4><p>The gift positioning: buying silk from an intimacy brand is a message between partners. We write the card copy so they don't have to.</p></div><span class="fmt">Gift funnel</span></div>
+    </div>
+
+    <div class="adgrid" style="margin-top:64px">
+      <div class="ad"><img src="images/mood-texture.jpg" alt="Oxblood silk macro texture"><div class="body"><div class="brand"><b>Texture</b><span>Oxblood 22mm</span></div><p>The fabric close enough to feel. PDP hero-zoom language and ad-opening frame.</p></div></div>
+      <div class="ad"><img src="images/mood-doorway.jpg" alt="Silk robe doorway silhouette"><div class="body"><div class="brand"><b>Anticipation</b><span>Campaign frame</span></div><p>The doorway moment — the whole After Dark thesis in one image.</p></div></div>
+      <div class="ad"><img src="images/mood-morning.jpg" alt="Morning after breakfast tray on silk"><div class="body"><div class="brand"><b>Aftermath</b><span>Morning After</span></div><p>Two cups. No caption needed. The retention-email and UGC world.</p></div></div>
+      <div class="ad"><img src="images/mood-nightstand.jpg" alt="Silk camisole nightstand still life"><div class="body"><div class="brand"><b>Ritual</b><span>Nightstand still life</span></div><p>Silk beside the perfume and the candle — positioned as beauty object, not clothing.</p></div></div>
+      <div class="ad"><img src="images/afterdark-01.jpg" alt="Burgundy robe editorial"><div class="body"><div class="brand"><b>Her</b><span>Confidence, not pose</span></div><p>Model direction: over-the-shoulder, mid-thought, never performing for the camera.</p></div></div>
+      <div class="ad"><img src="images/gift-02.jpg" alt="Silk gift box"><div class="body"><div class="brand"><b>The Gift</b><span>Q4 engine</span></div><p>Blush silk in cream box — the single image that carries the holiday funnel.</p></div></div>
+    </div>
+
+    <div style="display:flex;gap:0;margin-top:64px;border:1px solid var(--line)">
+      <div style="flex:1;height:84px;background:#14100e;display:flex;align-items:flex-end;padding:10px"><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;color:rgba(233,220,200,.6)">INK #14100E</span></div>
+      <div style="flex:1;height:84px;background:#7e2d26;display:flex;align-items:flex-end;padding:10px"><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;color:rgba(233,220,200,.8)">OXBLOOD #7E2D26</span></div>
+      <div style="flex:1;height:84px;background:#c9a35c;display:flex;align-items:flex-end;padding:10px"><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;color:#14100e">AMBER #C9A35C</span></div>
+      <div style="flex:1;height:84px;background:#e9dcc8;display:flex;align-items:flex-end;padding:10px"><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;color:#14100e">CHAMPAGNE #E9DCC8</span></div>
+      <div style="flex:1;height:84px;background:#d9a0a0;display:flex;align-items:flex-end;padding:10px"><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;color:#14100e">BLUSH #D9A0A0</span></div>
+    </div>
+    <p style="margin-top:16px;font-family:'Spline Sans Mono',monospace;font-size:11px;color:var(--champagne-dim)">TYPE: Fraunces (display, italic for emotion) · Archivo (body) · Spline Sans Mono (specs &amp; receipts)</p>
+  </div>
+</section>
+
+<!-- 01 WHY NOW -->
+<section id="s1">
+  <div class="snum">01</div>
+  <div class="wrap">
+    <div class="kicker">The Case</div>
+    <h2>Why now — the <em>verified</em> facts</h2>
+    <p class="lede">Every number below survived 3-vote adversarial verification against primary sources. The junk got killed: a $52B "luxury lingerie market" stat, a 42% gifting share, and a $55/set FOB benchmark were all refuted and are NOT used anywhere in this plan.</p>
+
+    <div class="stats">
+      <div class="stat"><div class="v">10.5<span>%</span></div><div class="l">Sleepwear/loungewear CAGR 2025–30 (Technavio; peers cluster 8.7–9.9%). Roughly 2× general apparel growth. <span class="chip warn" style="margin-top:8px">2–1 verified</span></div></div>
+      <div class="stat"><div class="v">$7.70<span>–10.20</span></div><div class="l">Verified live FOB per piece, 100% silk seamless underwear/bralette sets at 50-pc MOQ (Suzhou Esa Silk, checked 07/07/26). <span class="chip ok" style="margin-top:8px">3–0 verified</span></div></div>
+      <div class="stat"><div class="v">50<span>pcs</span></div><div class="l">Typical custom private-label MOQ per style across Suzhou OEMs (DreamSilk, Sinosilk, Silkua). Stock designs from 10–20 pcs. <span class="chip ok" style="margin-top:8px">3–0 verified</span></div></div>
+      <div class="stat"><div class="v">20<span>–30 days</span></div><div class="l">Production lead time after sample approval. Spec-to-inventory in 1–2 months with air freight. <span class="chip ok" style="margin-top:8px">3–0 verified</span></div></div>
+    </div>
+
+    <div class="facts">
+      <div class="fact"><span class="chip warn">2–1 verified</span>
+        <h4>Silk is the price lever in luxury intimates</h4>
+        <p>Material choice is "critical in determining the price point and appeal" — silk sits alongside French lace as the prestige fabric of the category. That means the fabric itself, not brand heritage, carries the premium. A new entrant can charge luxury-tier prices on day one if the silk is real.</p>
+        <span class="src">econmarketresearch.com · corroborated by 3 independent reports</span>
+      </div>
+      <div class="fact"><span class="chip ok">Live ad-library data</span>
+        <h4>Two Chinese silk DTCs are already printing money on Meta</h4>
+        <p>SilkSilky runs 813 live ads (25.4M total reach) on a discount-flash-sale playbook. LilySilk runs 790 live ads (114M reach, 1.28M IG followers) on quality + machine-washable positioning. The demand is proven; the intimacy positioning is unclaimed.</p>
+        <span class="src">TrendTrack live pulls, July 7 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 SOURCING -->
+<section id="s2">
+  <div class="snum">02</div>
+  <div class="wrap">
+    <div class="kicker">Supply Chain</div>
+    <h2>Sourcing: the Suzhou <em>silk cluster</em></h2>
+    <p class="lede">The strongest research finding (unanimous verification): Suzhou/Wujiang — especially Shengze Town — is a dense cluster of vertically-integrated silk OEMs doing full private label with gift boxes out of the factory. This slots directly into the Kings Group sourcing trip.</p>
+
+    <div class="tscroll">
+    <table>
+      <tr><th>Factory</th><th>Custom MOQ</th><th>Notes</th><th>Signal</th></tr>
+      <tr><td>Taihu Snow Silk</td><td>100–150/design · stock from 10–20</td><td>Founded 2002, publicly listed, cocoon-to-garment vertical, OEM for 50+ brands, gift boxes</td><td>Strongest partner candidate</td></tr>
+      <tr><td>DreamSilk</td><td>50/style/size (~250 for 5-size run)</td><td>6A-grade 16–25 momme, OEKO-TEX, 20–30 day lead post-sample</td><td>Clearest published specs</td></tr>
+      <tr><td>Sinosilk</td><td>50/design</td><td>Broad catalog; fast-timeline claims were refuted — verify at sampling</td><td>Backup</td></tr>
+      <tr><td>Silkua</td><td>50 pcs (FAQ claims no-MOQ)</td><td>16–30 momme range; internal inconsistency flagged</td><td>Sample-round candidate</td></tr>
+      <tr><td>Wujiang First Textile</td><td>~100 pcs</td><td>Made-in-China Diamond Member since 2011, ODM, custom gift box accepted</td><td>Solid</td></tr>
+      <tr><td>Suzhou Esa / Yasha / Linyi</td><td>20–50 pcs</td><td>Alibaba specialists, verified real Suzhou factories w/ standalone sites + SGS/OEKO-TEX</td><td>Price benchmark: $7.70–10.20/pc</td></tr>
+    </table>
+    </div>
+
+    <div class="momme">
+      <div class="mcard"><div class="mm">16<span>mm</span></div><h5>Summer weight</h5><p>Cheapest genuine-silk tier. Fine for a low-cost entry accessory (scrunchies, sleep masks, pillowcases) but too sheer to carry a premium intimates line.</p></div>
+      <div class="mcard reco"><div class="mm">19<span>mm</span></div><h5>The standard — our core line</h5><p>"The choice of most brands." Best softness/durability/cost balance, independently corroborated across five unrelated silk sellers. Core Nancy Silk spec.</p></div>
+      <div class="mcard"><div class="mm">22<span>mm</span></div><h5>Luxury tier</h5><p>"The choice of many luxury brands." Heavier drape, noticeably richer hand-feel. Reserve for the elevated capsule and the gift kit.</p></div>
+    </div>
+
+    <p style="margin-top:28px;font-size:13.5px;color:var(--champagne-dim)"><span class="chip warn">Caveat</span> All supplier terms are self-reported marketing verified as accurately quoted — not audited fulfillment. Before any PO: demand OEKO-TEX certificate IDs, SGS reports, and burn-test/lab-verify fabric composition. Alibaba "100% silk" is frequently poly satin.</p>
+  </div>
+</section>
+
+<!-- 03 COMPETITOR INTEL -->
+<section id="s3">
+  <div class="snum">03</div>
+  <div class="wrap">
+    <div class="kicker">Live Ad Intelligence</div>
+    <h2>What's already <em>working</em> on Meta</h2>
+    <p class="lede">Real ads pulled from the ad library today — not blog claims. (Web-sourced competitor AOV/funnel claims all failed adversarial verification, so the teardown below uses only live ad-platform data.)</p>
+
+    <div class="adgrid">
+      <div class="ad"><img src="https://medias.trendtrack.io/thumbnails/facebook/1288703459124135.jpg" alt="SilkSilky ad">
+        <div class="body">
+          <div class="brand"><b>SilkSilky</b><span>813 live ads</span></div>
+          <p>25.4M total reach, GB/IE/EU. Pure discount machine: 48-hour flash sales, 50–70% off, tiered codes, "Buy 3 get 1."</p>
+          <div class="quote">"100% Pure Mulberry Silk — same luxury as £500 brands"</div>
+          <p>Takeaway: value-anchoring against luxury brands works at scale. But the brand equity is disposable — that's our opening.</p>
+        </div>
+      </div>
+      <div class="ad"><img src="https://medias.trendtrack.io/image/facebook/2991167614427419.jpg" alt="LilySilk ad">
+        <div class="body">
+          <div class="brand"><b>LilySilk</b><span>790 live ads</span></div>
+          <p>114M total reach, 1.28M IG followers, 7 EU markets. Positioning: quality, "machine-washable silk," awards, local warehouses + free returns.</p>
+          <div class="quote">"Silk that styles easily — and goes straight in the washing machine"</div>
+          <p>Takeaway: washability is THE objection-killer in this category. Every Nancy Silk PDP and ad should handle it up front.</p>
+        </div>
+      </div>
+      <div class="ad"><img src="https://medias.trendtrack.io/image/facebook/1368077191788077.jpg" alt="SnoozeBand ad">
+        <div class="body">
+          <div class="brand"><b>SnoozeBand</b><span>392 live ads</span></div>
+          <p>56M total reach on a single silk sleep-mask SKU. Plays: "As seen in Selfridges," 5,000+ five-star reviews, limited color drops.</p>
+          <div class="quote">"100% Mulberry Silk for your skin"</div>
+          <p>Takeaway: a single hero SKU with social proof + scarcity drops can carry an entire ad account. Skin-benefit framing is standard.</p>
+        </div>
+      </div>
+      <div class="ad"><img src="https://medias.trendtrack.io/image/facebook/901642815539640.jpg" alt="Soak and Sleep ad">
+        <div class="body">
+          <div class="brand"><b>Soak & Sleep</b><span>241 live ads</span></div>
+          <p>1.3M reach on one silk-bedding image ad, running 6 months. Angle: silk keeps hair & skin "naturally hydrated."</p>
+          <div class="quote">"Great for helping keep hair & skin naturally hydrated"</div>
+          <p>Takeaway: beauty-benefit framing (hair/skin) is the evergreen soft-claim angle — it sells silk without price talk.</p>
+        </div>
+      </div>
+      <div class="ad"><img src="https://medias.trendtrack.io/image/facebook/1844231552973981.jpg" alt="Revolt ad">
+        <div class="body">
+          <div class="brand"><b>Revolt Underwear</b><span>266 live ads</span></div>
+          <p>2.1M reach on the hero ad, 338 days running, ~$19K est. spend. Mechanism-angle silk boxers ("Built for balls. Backed by science").</p>
+          <div class="quote">"Trusted by 175k+ men ⭐⭐⭐⭐⭐"</div>
+          <p>Takeaway: advertorial-style mechanism copy works on silk — this is Nancy's home turf. (Their T-level claims are non-compliant; ours won't be.)</p>
+        </div>
+      </div>
+      <div class="ad"><img src="images/hero-01.jpg" alt="Nancy Silk concept product shot">
+        <div class="body">
+          <div class="brand"><b>The Gap</b><span>Unclaimed</span></div>
+          <p>Nobody in the silk category owns <b>intimacy</b>. SilkSilky owns cheap. LilySilk owns washable. Lunya owns sleep (US). Sleeper owns party pajamas.</p>
+          <div class="quote">Silk as foreplay — the fabric of what happens next.</div>
+          <p>Nancy is the only brand that can say it with a straight face and an existing audience of buyers who already trust us with their intimate life.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:90px">
+      <div class="kicker">Reference Wall — sent from Shenzhen (Ali, 07/07)</div>
+      <h2 style="font-size:clamp(28px,3.4vw,42px)">The provocative-luxury <em>proof set</em></h2>
+      <p class="lede">Three reference brands from Ali. All three run direct product ads on Meta today — proof the bolder lane clears policy when the craft is high. Pulled live from the ad library:</p>
+      <div class="adgrid">
+        <div class="ad"><img src="https://medias.trendtrack.io/image/facebook/812172898634649.jpg" alt="Anoeses After Hours ad">
+          <div class="body">
+            <div class="brand"><b>Anoeses</b><span>55 live ads · 274K IG</span></div>
+            <p>Leather/latex intimacy brand now expanding into <b>textiles</b> — their new collection is literally called "After Hours."</p>
+            <div class="quote">"Made for every plan from late morning to deep night."</div>
+            <p>Takeaway: our After Dark lane is being validated in real time by an adjacent brand moving INTO fabric. Nancy moves with silk + an owned audience they don't have.</p>
+          </div>
+        </div>
+        <div class="ad"><img src="https://medias.trendtrack.io/image/facebook/940788881870397.jpg" alt="MARIEMUR ad">
+          <div class="body">
+            <div class="brand"><b>MARIEMUR</b><span>363 live ads</span></div>
+            <p>Designer leather/lingerie house running 3.87M reach in 30 days — through a persona page called <b>"Marie's Whisper Magazine."</b> Crotchless-bodysuit product ads, in-feed, at scale.</p>
+            <div class="quote">"Villain Era. It begins when power is no longer negotiated — only directed."</div>
+            <p>Takeaway: the magazine-persona page is exactly Nancy's playbook. A "Nancy After Dark" editorial page can carry spicier creative than the main brand page ever could.</p>
+          </div>
+        </div>
+        <div class="ad"><img src="https://medias.trendtrack.io/image/facebook/1474213347454542.jpg" alt="Agent Provocateur ad">
+          <div class="body">
+            <div class="brand"><b>Agent Provocateur</b><span>66 live ads · 12.1M reach</span></div>
+            <p>The category ceiling. Runs single-product luxury ads (€110/£95 thongs) with three-word desire copy and SS26 campaign art.</p>
+            <div class="quote">"A New Kind of Desire" · "Arrivals Worth Undressing For"</div>
+            <p>Takeaway: at the top end, the product shot IS the ad — no discounts, no bullet points. Sets the photography bar for the 22mm gift tier.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 CONCEPTS -->
+<section id="s4">
+  <div class="snum">04</div>
+  <div class="wrap">
+    <div class="kicker">Brand Direction</div>
+    <h2>Three concepts, <em>one decision</em></h2>
+    <p class="lede">Generated concept photography below (Higgsfield Soul v2 + Marketing Studio) — these are direction boards, not final assets. Final shoots use real product samples from Suzhou.</p>
+
+    <div class="concept">
+      <div class="concept-head"><span class="cnum">CONCEPT 01</span><h3>Après</h3><span class="tag">Quiet luxury · daily ritual · morning light</span></div>
+      <div class="cgrid">
+        <div class="imgs"><img src="images/apres-01.jpg" alt="Après concept 1"><img src="images/apres-02.jpg" alt="Après concept 2"></div>
+        <div class="cbody">
+          <p>Washable 19mm silk as an everyday self-worth purchase. Champagne, oat, ivory. The Lunya/Eberjey lane — biggest audience, calmest creative, easiest compliance.</p>
+          <div class="row"><span class="k">Palette</span>Champagne · cream · oat · warm grey</div>
+          <div class="row"><span class="k">Voice</span>"You've earned softness."</div>
+          <div class="row"><span class="k">Risk</span>Crowded lane; hardest to differentiate without the intimacy hook</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="concept">
+      <div class="concept-head"><span class="cnum">CONCEPT 02</span><h3>After <em>Dark</em></h3><span class="tag">Intimacy-led · date night · the Nancy unlock</span></div>
+      <div class="cgrid">
+        <div class="imgs"><img src="images/afterdark-02.jpg" alt="After Dark concept"><img src="images/gift-01.jpg" alt="Gift box concept"></div>
+        <div class="cbody">
+          <p>Silk as the beginning of the evening, not the end of it. Oxblood, amber, charcoal. Bundles natively with Nancy's existing catalog — the robe and the toy arrive in the same gift box. No competitor can follow us here.</p>
+          <div class="row"><span class="k">Palette</span>Oxblood · burgundy · amber · charcoal</div>
+          <div class="row"><span class="k">Voice</span>"The robe that starts something."</div>
+          <div class="row"><span class="k">Risk</span>Meta creative policy — lead with elegance, keep the spice in the advertorial</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="concept">
+      <div class="concept-head"><span class="cnum">CONCEPT 03</span><h3>Play</h3><span class="tag">Nancy house style · pop color · joy</span></div>
+      <div class="cgrid">
+        <div class="imgs"><img src="images/playful-01.jpg" alt="Play concept 1"><img src="images/playful-02.jpg" alt="Play concept 2"></div>
+        <div class="cbody">
+          <p>Coral, cherry, pink — silk with Nancy's existing playful energy. Highest thumb-stop rate in feed, most on-brand with the current site, youngest skew.</p>
+          <div class="row"><span class="k">Palette</span>Coral · cherry red · rose pink</div>
+          <div class="row"><span class="k">Voice</span>"Good mornings start the night before."</div>
+          <div class="row"><span class="k">Risk</span>Playful reads "cheap" next to LilySilk unless the product photography stays premium</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reco-band"><b>Recommendation:</b> Lead with <b>After Dark</b> as the positioning and campaign world — it's the only lane no silk brand can contest — built on <b>Après</b>-grade product quality (19mm core / 22mm gift tier), with <b>Play</b>-style creative reserved for Nancy-audience retargeting where the brand permission already exists. The Shenzhen reference wall (below the ad intel) confirms the lane is live: Anoeses just launched a textile collection called "After Hours," and MARIEMUR scales provocative lingerie at 3.87M reach/30d through a magazine-persona page — the exact distribution trick Nancy already runs.</div>
+  </div>
+</section>
+
+<!-- 05 THE NAME -->
+<section id="name">
+  <div class="snum">05</div>
+  <div class="wrap">
+    <div class="kicker">Naming — domains checked live 07/07</div>
+    <h2>What we <em>call</em> it</h2>
+    <p class="lede">Brand hierarchy: Nancy (house) → line name (below) → "After Dark" stays the launch collection, "Worn After Dark" the campaign line. Six candidates, DNS-checked:</p>
+
+    <div class="tscroll">
+    <table>
+      <tr><th>#</th><th>Name</th><th>Why</th><th>Domain</th><th>Call</th></tr>
+      <tr><td>1</td><td><b>Après by Nancy</b></td><td>French for "after" — the glow after, après-ski energy, silk's French cachet. Works day AND night, so it holds Concept 01 and 02 in one word. Short enough for a woven label.</td><td>apresbynancy.com OPEN · launch as apres.hellonancy.com</td><td style="color:var(--gold)">RECOMMENDED</td></tr>
+      <tr><td>2</td><td>Nightcap</td><td>Playful double meaning (drink / invitation), extremely giftable, very Nancy voice.</td><td>nightcapsilk.com OPEN</td><td>Strong alt — risks reading sleep-only</td></tr>
+      <tr><td>3</td><td>Worn After Dark</td><td>The campaign hook as a name. Unbeatable in an ad headline.</td><td>wornafterdark.com OPEN</td><td>Keep as campaign line, not label</td></tr>
+      <tr><td>4</td><td>Entre</td><td>"Between" — the hour in between. Chic, minimal.</td><td>entresilk.com OPEN</td><td>Needs explaining; bench</td></tr>
+      <tr><td>5</td><td>Second Skin</td><td>The classic silk phrase, instantly understood.</td><td>secondskinsilk.com OPEN</td><td>Generic — every silk brand uses it in copy</td></tr>
+      <tr><td>6</td><td>Nancy Silk</td><td>Descriptive default, zero brand work needed.</td><td>nancysilk.com TAKEN</td><td>Fallback only</td></tr>
+    </table>
+    </div>
+
+    <div class="reco-band"><b>Call:</b> <b>Après by Nancy</b> — one word that owns "after," pairs with the After Dark collection naming, survives on a garment label, and the domain plus subdomain are both clear. Register apresbynancy.com + nightcapsilk.com (cheap insurance on the alt) this week.</div>
+  </div>
+</section>
+
+<!-- 06 ANGLES -->
+<section id="s5">
+  <div class="snum">06</div>
+  <div class="wrap">
+    <div class="kicker">Idea Bank</div>
+    <h2>Ten angles to <em>test</em></h2>
+    <div class="angles">
+      <div class="angle"><div><h4>The robe that starts something</h4><p>Flagship After Dark angle. Silk robe as the ritual object of date night. Elegant in-feed, spicier in the advertorial.</p></div><span class="fmt">Static + advertorial</span></div>
+      <div class="angle"><div><h4>Night sweats / silk thermoregulation</h4><p>Menopause-adjacent comfort angle feeding the existing Lem menopause funnel audience. ⚠ Needs claim substantiation before any health-adjacent copy — soft comfort claims only until then.</p></div><span class="fmt">Advertorial → quiz</span></div>
+      <div class="angle"><div><h4>Hair & skin, while you sleep</h4><p>The proven Soak & Sleep evergreen: reduced friction, hydration framing. Beauty benefit, zero compliance risk if phrased as material property.</p></div><span class="fmt">Static + UGC</span></div>
+      <div class="angle"><div><h4>Machine-washable objection kill</h4><p>LilySilk's scaled lesson. "Real silk. Actual washing machine." Demo video of the wash cycle = the whole ad.</p></div><span class="fmt">Video demo</span></div>
+      <div class="angle"><div><h4>The anniversary kit</h4><p>22mm robe + Nancy bestseller + candle in one factory gift box. The bundle no sleepwear brand can copy. Gift-positioning data point was refuted in research — validate with our own Zigpoll post-purchase survey before scaling.</p></div><span class="fmt">Bundle LP</span></div>
+      <div class="angle"><div><h4>"Same factory as £500 brands"</h4><p>SilkSilky's value-anchor, executed with receipts: momme weight, 6A grade, OEKO-TEX cert on-screen. Educated-buyer flex.</p></div><span class="fmt">Comparison static</span></div>
+      <div class="angle"><div><h4>He buys it for her (for him)</h4><p>Male-targeted gift funnel before Valentine's/Christmas: a quiz picks her size and color, gift box ships wrapped. Nancy already knows how to talk to this buyer.</p></div><span class="fmt">Quiz funnel</span></div>
+      <div class="angle"><div><h4>Hotel-room feeling</h4><p>"That first night of the trip feeling, every Tuesday." Escapism + ritual. Strong visual world for video.</p></div><span class="fmt">Video + static</span></div>
+      <div class="angle"><div><h4>What 19 momme means</h4><p>Education-as-status advertorial: teach momme weights, grade the competitors, position Nancy Silk as the honest spec. Builds the "receipts" brand pillar.</p></div><span class="fmt">Advertorial</span></div>
+      <div class="angle"><div><h4>The unboxing is the ad</h4><p>Factory gift box + tissue + ribbon designed for the camera. Seed 50 units to SideShift UGC creators at launch; the box does the talking.</p></div><span class="fmt">UGC wave</span></div>
+      <div class="angle"><div><h4>The magazine-persona page (MARIEMUR play)</h4><p>Run After Dark creative from a "Nancy After Dark" editorial page, not the main brand page — MARIEMUR proves 3.87M reach/30d of provocative lingerie clears Meta policy this way. Persona pages are already in the Nancy ad-brief playbook.</p></div><span class="fmt">Distribution</span></div>
+      <div class="angle"><div><h4>Three-word desire copy (AP play)</h4><p>For the 22mm tier: single product shot, campaign-grade, copy like "Worth Undressing For." No discount, no bullets — price confidence as the message.</p></div><span class="fmt">Premium static</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 PRICE -->
+<section id="s6">
+  <div class="snum">07</div>
+  <div class="wrap">
+    <div class="kicker">SKU Priority — the launch five, ranked</div>
+    <h2>Top 5 SKUs & <em>margins</em></h2>
+    <p class="lede">Ranked by role in the funnel, not by vanity. Retail anchored on the verified "silk = price lever" finding and the verified FOB floor; set-level FOB costs lock after Phase 0 sampling (the $55/set web benchmark was refuted — not used).</p>
+
+    <div class="angles" style="margin-top:44px">
+      <div class="angle"><div><h4>The Slip — 19mm washable · $89–109</h4><p><b>The ad workhorse.</b> Category's proven entry hero (every scaled silk brand leads with it). Carries the paid-traffic funnel; the piece we sample first and shoot first. Est. margin 75–85%.</p></div><span class="fmt">Traffic hero</span></div>
+      <div class="angle"><div><h4>The Robe — 19mm · $99–129</h4><p><b>The brand object.</b> "The robe that starts something" — the After Dark flagship, the campaign image, gift #1 for the He-Buys-It funnel. Est. margin 75–85%.</p></div><span class="fmt">Flagship + gift</span></div>
+      <div class="angle"><div><h4>Cami + Short Set — 19mm · $79–99</h4><p><b>The entry price point.</b> Lowest ticket of the apparel line, Play-world retargeting creative, natural bundle filler with the slip/robe. Est. margin ~80%.</p></div><span class="fmt">Entry + bundle</span></div>
+      <div class="angle"><div><h4>Silk Sleep Mask — 22mm padded · $29–39</h4><p><b>The tripwire.</b> SnoozeBand proves one silk mask can carry 392 live ads and 56M reach. Cheapest sampling risk of the five, add-on at every checkout, list-builder before the apparel drops. Highest margin % of the line.</p></div><span class="fmt">Tripwire + AOV</span></div>
+      <div class="angle"><div><h4>The Anniversary Kit — 22mm robe + Nancy bestseller · $149–189</h4><p><b>The moat.</b> Silk + intimacy product in one factory gift box — the bundle no sleepwear brand can copy. Q4 engine; validate gift demand in the Phase 1 test before building the calendar on it.</p></div><span class="fmt">AOV + Q4</span></div>
+    </div>
+
+    <p style="margin-top:22px;font-size:12.5px;color:var(--champagne-dim)">Bench (fast-follow after launch reads): silk pillowcase pair (hair/skin angle, proven by Soak &amp; Sleep), scrunchie trio as GWP/first-purchase hook. *Margins based on verified $7.70–10.20/pc FOB for underwear sets and supplier-quoted ranges; all reporting in USD.</p>
+  </div>
+</section>
+
+<!-- 07 GAME PLAN -->
+<section id="s7">
+  <div class="snum">08</div>
+  <div class="wrap">
+    <div class="kicker">Execution</div>
+    <h2>The 90-day <em>game plan</em></h2>
+    <p class="lede">Funnel-first, inventory-last — the same sequence that works everywhere else at Nancy: prove the angle with paid traffic before the PO, then let verified demand size the buy.</p>
+
+    <div class="phase">
+      <div class="when">Phase 0<b>Wk 1–2</b></div>
+      <div>
+        <h4>Samples + receipts</h4>
+        <ul>
+          <li>Request quotes + samples from <b>Taihu Snow, DreamSilk, Silkua</b>: 19mm slip, robe, cami set; 22mm robe. Demand <b>OEKO-TEX cert IDs, SGS reports, landed-cost quotes</b> (FOB + freight + duties).</li>
+          <li>Burn-test / lab-verify fabric composition on arrival — Alibaba "100% silk" is frequently poly.</li>
+          <li>Spec the gift box (factory-made) for the After Dark unboxing.</li>
+          <li>Fold supplier visits into the <b>Kings Group China trip</b> — Suzhou is ~2h from Shanghai.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="when">Phase 1<b>Wk 2–5</b></div>
+      <div>
+        <h4>Angle validation before inventory</h4>
+        <ul>
+          <li>Mine Nancy's 20K+ reviews (<b>/review-intel</b>) for silk/robe/gift language; run the Zigpoll survey with a silk-interest question.</li>
+          <li>Build 2 advertorials (<b>"The robe that starts something"</b> + <b>"What 19 momme means"</b>) and 1 waitlist/preorder LP on get.officialnancy.com. Pixel 832767357702650 on everything.</li>
+          <li>$3–5K Meta test across the 3 concept creative worlds (statics from the generated boards + sample photography when it lands).</li>
+          <li>Kill criteria: sub-1% LP conversion to waitlist/preorder at target CPC = shelve; 3%+ = fast-track the PO.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="when">Phase 2<b>Wk 5–9</b></div>
+      <div>
+        <h4>Test buy + funnel build</h4>
+        <ul>
+          <li>PO the winning 2 hero SKUs at <b>50–150 units/style</b> (~$5–15K inventory, air freight, 20–30 day production).</li>
+          <li>Real-product shoot in the winning concept world; <b>/creative-vault</b> library (500+ statics, UGC, talking-head) off the real photography.</li>
+          <li>Build PDP + bundle flow on the Nancy Shopify stack; wire the Anniversary Kit as the AOV play.</li>
+          <li>Seed 50 units to SideShift creators for the unboxing UGC wave.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="when">Phase 3<b>Wk 9–13</b></div>
+      <div>
+        <h4>Launch + scale into Q4</h4>
+        <ul>
+          <li>Full funnel live: ad → advertorial → PDP/bundle. Scale winners by 30-day rolling ROAS, 7-day trends alongside.</li>
+          <li>Existing-customer email/SMS drop first — cheapest revenue and the fastest review velocity.</li>
+          <li>Reorder deep on winners (150→500+/style) in time for the <b>Nov gift window</b>; expand to He-Buys-It gift quiz for Valentine's.</li>
+          <li>Decision gate at day 90: standalone sub-brand vs. permanent Nancy category, using LTV:CAC from the calculator.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 RISKS -->
+<section id="s8">
+  <div class="snum">09</div>
+  <div class="wrap">
+    <div class="kicker">Eyes Open</div>
+    <h2>Open questions & <em>honest risks</em></h2>
+    <div class="risks">
+      <div class="risk-card"><h4>Competitor economics unverified</h4><p>Every web claim about Lunya/SKIMS/Eberjey AOVs and funnels failed adversarial verification. Next loop: direct site teardowns + deeper ad-library pulls on US players before finalizing price points.</p></div>
+      <div class="risk-card"><h4>Set-level unit costs unquoted</h4><p>The verified $7.70–10.20 FOB covers underwear/bralette sets only. Slip/robe/PJ-set costs are quote-based — margins stay provisional until Phase 0 sampling returns landed costs.</p></div>
+      <div class="risk-card"><h4>Gifting thesis lacks data</h4><p>The "42% of luxury sleepwear is gifted" stat was refuted. The Anniversary Kit is still strategically sound (unique to Nancy) but validate gift demand via our own survey + the Phase 1 test before building the calendar around it.</p></div>
+      <div class="risk-card"><h4>Health-adjacent claims need substantiation</h4><p>Thermoregulation/menopause and skin-benefit claims need citable support before ad copy (same discipline as Lem: modality-only claims). Until then: comfort language only.</p></div>
+      <div class="risk-card"><h4>Meta creative policy</h4><p>Intimacy-led positioning must stay elegant in-feed. Lead with the robe, the box, the morning after — keep the explicit connection to Nancy's catalog on the advertorial and PDP, not the ad.</p></div>
+      <div class="risk-card"><h4>Fabric fraud</h4><p>"100% mulberry silk" on Alibaba is frequently poly satin. Lab verification is a hard gate before any PO — one bad batch kills the "honest spec" brand pillar permanently.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    NANCY SILK — concept board & game plan · Hello Nancy · July 7, 2026<br>
+    Research: 105-agent deep-research workflow (5-angle fan-out, 15 sources fetched, 3-vote adversarial verification per claim) + TrendTrack live ad pulls + Higgsfield concept generation.<br>
+    Key sources: technavio.com (Apr 2026 sleepwear report) · taihusnow.com · dreamsilken.com · sino-silk.com · silkua.com · alibaba.com silk-lingerie showroom (verified live 07/07/26) · TrendTrack ad library.<br>
+    Refuted & excluded: $52.6B luxury-lingerie sizing · $6.8B luxury-loungewear/38.5% silk share · 42% gifting share · $55–60/set FOB benchmark.
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.05});
+document.querySelectorAll('section .wrap > *, .hero .wrap > *').forEach(el=>{el.classList.add('reveal');io.observe(el)});
+// safety: never leave content hidden (headless captures, odd browsers)
+setTimeout(()=>document.querySelectorAll('.reveal:not(.in)').forEach(e=>e.classList.add('in')),1500);
+</script>
+</body>
+</html>
