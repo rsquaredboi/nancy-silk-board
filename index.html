@@ -3,25 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NANCY SILK — Concept Board & Game Plan</title>
+<title>APRÈS by Nancy — Silk Line Concept Board & Game Plan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Archivo:wght@300;400;500;600&family=Spline+Sans+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#14100e;
-  --ink-2:#1d1815;
-  --ink-3:#2a221d;
-  --champagne:#e9dcc8;
-  --champagne-dim:#b3a48c;
-  --oxblood:#7e2d26;
-  --oxblood-bright:#a83c32;
-  --coral:#ff6b52;
-  --gold:#c9a35c;
-  --line:rgba(233,220,200,.14);
-  --ok:#7da87b;
-  --warn:#c9a35c;
-  --risk:#c96b5c;
+  --ink:#FCF7ED;            /* page bg — Nancy cream */
+  --ink-2:#FFFFFF;          /* cards */
+  --ink-3:#F6EDDA;
+  --champagne:#1A1A1A;      /* text — Nancy ink */
+  --champagne-dim:#5D5346;
+  --oxblood:#EA4264;        /* Nancy raspberry */
+  --oxblood-bright:#EA4264;
+  --coral:#FF30CC;
+  --gold:#E11FB4;           /* Nancy pink (deepened for contrast on cream) */
+  --pink:#FF30CC;
+  --lime:#CCFD28;
+  --amber:#FFB74A;
+  --line:rgba(26,26,26,.16);
+  --ok:#1F9E4B;
+  --warn:#B87700;
+  --risk:#EA4264;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -38,10 +41,24 @@ body{
 .wrap{max-width:1280px;margin:0 auto;padding:0 48px}
 @media(max-width:760px){.wrap{padding:0 20px}}
 
+
+/* brand band */
+.brandband{background:var(--lime);border-bottom:2px solid var(--champagne);padding:56px 0 48px;position:relative;overflow:hidden}
+.brandband .bb-row{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.brandband img.bb-logo{height:64px;width:auto}
+.brandband .bb-x{font-family:'Fraunces',serif;font-style:italic;font-size:28px;color:var(--champagne)}
+.brandband h1.bb-mark{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(56px,9vw,128px);line-height:.95;letter-spacing:-.02em;color:var(--champagne);margin:26px 0 6px}
+.brandband h1.bb-mark em{font-style:italic;font-weight:300;color:#E11FB4}
+.brandband .bb-tag{font-size:18px;color:var(--champagne);max-width:560px}
+.brandband .bb-meta{display:flex;gap:14px;align-items:center;margin-top:26px;flex-wrap:wrap;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--champagne)}
+.brandband .dot{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--champagne);display:inline-block}
+.brandband .bb-circ{position:absolute;right:-40px;top:50%;transform:translateY(-50%) rotate(12deg);height:230px;opacity:.95}
+@media(max-width:900px){.brandband .bb-circ{display:none}}
+
 /* ---------- hero ---------- */
 .hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;position:relative;border-bottom:1px solid var(--line)}
 .hero-bg{position:absolute;inset:0;overflow:hidden}
-.hero-bg img{position:absolute;right:-4%;top:0;height:100%;width:52%;object-fit:cover;opacity:.55;
+.hero-bg img{position:absolute;right:-4%;top:0;height:100%;width:52%;object-fit:cover;opacity:.85;
   -webkit-mask-image:linear-gradient(to right,transparent 0%,black 35%);mask-image:linear-gradient(to right,transparent 0%,black 35%)}
 .kicker{font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
 .hero h1{
@@ -57,7 +74,7 @@ body{
 section{padding:110px 0;border-bottom:1px solid var(--line);position:relative}
 .snum{
   font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(90px,12vw,170px);
-  color:transparent;-webkit-text-stroke:1px rgba(233,220,200,.18);line-height:1;position:absolute;top:60px;right:48px;user-select:none
+  color:transparent;-webkit-text-stroke:1.5px rgba(255,48,204,.5);line-height:1;position:absolute;top:60px;right:48px;user-select:none
 }
 h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(36px,4.6vw,58px);line-height:1.05;letter-spacing:-.01em;margin:18px 0 16px;max-width:800px}
 h2 em{font-style:italic;color:var(--gold)}
@@ -82,7 +99,7 @@ h2 em{font-style:italic;color:var(--gold)}
 .fact{border:1px solid var(--line);background:var(--ink-2);padding:28px 30px;position:relative}
 .fact h4{font-family:'Fraunces',serif;font-weight:400;font-size:21px;margin:14px 0 10px;line-height:1.3}
 .fact p{font-size:14.5px;color:var(--champagne-dim)}
-.fact .src{font-family:'Spline Sans Mono',monospace;font-size:11px;color:rgba(233,220,200,.4);margin-top:14px;display:block}
+.fact .src{font-family:'Spline Sans Mono',monospace;font-size:11px;color:rgba(26,26,26,.45);margin-top:14px;display:block}
 
 /* supplier table */
 table{width:100%;border-collapse:collapse;margin-top:48px;font-size:14px}
@@ -95,7 +112,7 @@ td:first-child{color:var(--champagne);font-weight:400}
 .momme{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:56px}
 @media(max-width:900px){.momme{grid-template-columns:1fr}}
 .mcard{border:1px solid var(--line);padding:34px 30px;background:var(--ink-2)}
-.mcard.reco{border-color:var(--gold);background:linear-gradient(180deg,rgba(201,163,92,.08),var(--ink-2))}
+.mcard.reco{border-color:var(--gold);background:linear-gradient(180deg,rgba(204,253,40,.35),var(--ink-2))}
 .mcard .mm{font-family:'Fraunces',serif;font-size:58px;font-weight:300;line-height:1}
 .mcard .mm span{font-size:20px;color:var(--gold)}
 .mcard h5{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:14px 0 10px}
@@ -129,7 +146,7 @@ td:first-child{color:var(--champagne);font-weight:400}
 .cbody p{font-size:15px;color:var(--champagne-dim);margin-bottom:16px}
 .cbody .row{display:flex;gap:12px;border-top:1px solid var(--line);padding:13px 0;font-size:13.5px}
 .cbody .row .k{font-family:'Spline Sans Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);min-width:110px;padding-top:2px}
-.reco-band{margin-top:36px;border:1px solid var(--gold);background:linear-gradient(90deg,rgba(201,163,92,.1),transparent);padding:26px 30px;font-size:15px}
+.reco-band{margin-top:36px;border:1px solid var(--gold);background:linear-gradient(90deg,rgba(204,253,40,.45),transparent);padding:26px 30px;font-size:15px}
 .reco-band b{font-family:'Fraunces',serif;font-style:italic;font-weight:400;color:var(--gold);font-size:18px}
 
 /* angles */
@@ -146,7 +163,7 @@ td:first-child{color:var(--champagne);font-weight:400}
 .price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:56px}
 @media(max-width:900px){.price-grid{grid-template-columns:repeat(2,1fr)}}
 .pcell{background:var(--ink-2);padding:30px 26px}
-.pcell.hero-sku{background:linear-gradient(180deg,rgba(126,45,38,.25),var(--ink-2))}
+.pcell.hero-sku{background:linear-gradient(180deg,rgba(255,48,204,.12),var(--ink-2))}
 .pcell .n{font-family:'Fraunces',serif;font-size:20px;font-weight:400}
 .pcell .pr{font-family:'Fraunces',serif;font-style:italic;font-size:34px;color:var(--gold);margin:10px 0 6px}
 .pcell .d{font-size:12.5px;color:var(--champagne-dim);line-height:1.55}
@@ -170,18 +187,18 @@ td:first-child{color:var(--champagne);font-weight:400}
 .phase .when b{display:block;font-family:'Fraunces',serif;font-style:italic;font-size:30px;color:var(--champagne);font-weight:300;letter-spacing:0;text-transform:none;margin-top:6px}
 .phase h4{font-family:'Fraunces',serif;font-weight:400;font-size:26px;margin-bottom:14px}
 .phase ul{list-style:none}
-.phase li{padding:9px 0 9px 26px;position:relative;font-size:14.5px;color:var(--champagne-dim);border-bottom:1px dashed rgba(233,220,200,.08)}
+.phase li{padding:9px 0 9px 26px;position:relative;font-size:14.5px;color:var(--champagne-dim);border-bottom:1px dashed rgba(26,26,26,.12)}
 .phase li::before{content:"—";position:absolute;left:0;color:var(--oxblood-bright)}
 .phase li b{color:var(--champagne);font-weight:500}
 
 /* risks */
 .risks{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:56px}
 @media(max-width:900px){.risks{grid-template-columns:1fr}}
-.risk-card{border:1px solid rgba(201,107,92,.35);background:rgba(126,45,38,.07);padding:26px 28px}
+.risk-card{border:1px solid rgba(234,66,100,.45);background:rgba(234,66,100,.06);padding:26px 28px}
 .risk-card h4{font-family:'Fraunces',serif;font-weight:400;font-size:19px;margin-bottom:8px}
 .risk-card p{font-size:13.5px;color:var(--champagne-dim)}
 
-footer{padding:70px 0 90px;font-family:'Spline Sans Mono',monospace;font-size:11.5px;color:rgba(233,220,200,.45);line-height:2}
+footer{padding:70px 0 90px;font-family:'Spline Sans Mono',monospace;font-size:11.5px;color:rgba(26,26,26,.55);line-height:2}
 footer a{color:var(--champagne-dim)}
 
 @media (prefers-reduced-motion: no-preference){
@@ -192,12 +209,33 @@ footer a{color:var(--champagne-dim)}
 </head>
 <body>
 
+<!-- BRAND BAND -->
+<div class="brandband">
+  <div class="wrap">
+    <div class="bb-row">
+      <img class="bb-logo" src="images/brand/Nancy_Full_logo_pink_transparent.png" alt="Hello Nancy logo">
+      <span class="bb-x">presents</span>
+    </div>
+    <h1 class="bb-mark">APRÈS <em>by Nancy</em></h1>
+    <p class="bb-tag">The silk line for what happens in between. Real mulberry silk, Nancy energy, and the only brand allowed to say what the robe is actually for.</p>
+    <div class="bb-meta">
+      <span class="dot" style="background:#FF30CC"></span>
+      <span class="dot" style="background:#FCF7ED"></span>
+      <span class="dot" style="background:#EA4264"></span>
+      <span class="dot" style="background:#7e2d26"></span>
+      <span class="dot" style="background:#1A1A1A"></span>
+      <span>A Hello Nancy line · hellonancy.com · collection 001: After Dark</span>
+    </div>
+  </div>
+  <img class="bb-circ" src="images/brand/Nancy_Logo_Circular_Pink.png" alt="">
+</div>
+
 <!-- HERO -->
 <div class="hero">
   <div class="hero-bg"><img src="images/afterdark-01.jpg" alt=""></div>
   <div class="wrap">
     <div class="kicker">Hello Nancy — New Line Proposal · 15 Research Loops · July 7, 2026</div>
-    <h1>NANCY<br><em>SILK</em></h1>
+    <h1>APRÈS<br><em>The Silk Line</em></h1>
     <p class="hero-sub">A mulberry-silk intimates line that only an intimacy brand can launch honestly. Sleepwear brands sell sleep. Lingerie brands sell looks. Nancy sells what happens in between — and the sourcing math says we can test it for the cost of one day of ad spend.</p>
     <div class="hero-meta">
       <div>CATEGORY GROWTH<b>+$40B by 2030</b></div>
@@ -234,13 +272,20 @@ footer a{color:var(--champagne-dim)}
     </div>
 
     <div style="display:flex;gap:0;margin-top:64px;border:1px solid var(--line)">
-      <div style="flex:1;height:84px;background:#14100e;display:flex;align-items:flex-end;padding:10px"><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;color:rgba(233,220,200,.6)">INK #14100E</span></div>
-      <div style="flex:1;height:84px;background:#7e2d26;display:flex;align-items:flex-end;padding:10px"><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;color:rgba(233,220,200,.8)">OXBLOOD #7E2D26</span></div>
+      <div style="flex:1.4;height:84px;background:#FF30CC;display:flex;align-items:flex-end;padding:10px"><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;color:#fff">NANCY PINK #FF30CC</span></div>
+      <div style="flex:1.4;height:84px;background:#CCFD28;display:flex;align-items:flex-end;padding:10px"><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;color:#1A1A1A">NANCY LIME #CCFD28</span></div>
+      <div style="flex:1;height:84px;background:#FCF7ED;display:flex;align-items:flex-end;padding:10px;border-right:1px solid var(--line)"><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;color:#1A1A1A">CREAM #FCF7ED</span></div>
+      <div style="flex:1;height:84px;background:#1A1A1A;display:flex;align-items:flex-end;padding:10px"><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;color:#FCF7ED">INK #1A1A1A</span></div>
+      <div style="flex:1;height:84px;background:#EA4264;display:flex;align-items:flex-end;padding:10px"><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;color:#fff">RASPBERRY #EA4264</span></div>
+      <div style="flex:1;height:84px;background:#FFB74A;display:flex;align-items:flex-end;padding:10px"><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;color:#1A1A1A">AMBER #FFB74A</span></div>
+      <div style="flex:1;height:84px;background:#7e2d26;display:flex;align-items:flex-end;padding:10px"><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;color:#FCF7ED">OXBLOOD (LINE) #7E2D26</span></div>
+    </div>
+      <div style="flex:1;height:84px;background:#7e2d26;display:flex;align-items:flex-end;padding:10px"><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;color:rgba(252,247,237,.9)">OXBLOOD #7E2D26</span></div>
       <div style="flex:1;height:84px;background:#c9a35c;display:flex;align-items:flex-end;padding:10px"><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;color:#14100e">AMBER #C9A35C</span></div>
       <div style="flex:1;height:84px;background:#e9dcc8;display:flex;align-items:flex-end;padding:10px"><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;color:#14100e">CHAMPAGNE #E9DCC8</span></div>
       <div style="flex:1;height:84px;background:#d9a0a0;display:flex;align-items:flex-end;padding:10px"><span style="font-family:'Spline Sans Mono',monospace;font-size:10px;color:#14100e">BLUSH #D9A0A0</span></div>
     </div>
-    <p style="margin-top:16px;font-family:'Spline Sans Mono',monospace;font-size:11px;color:var(--champagne-dim)">TYPE: Fraunces (display, italic for emotion) · Archivo (body) · Spline Sans Mono (specs &amp; receipts)</p>
+    <p style="margin-top:16px;font-family:'Spline Sans Mono',monospace;font-size:11px;color:var(--champagne-dim)">MASTER PALETTE = hellonancy.com live site (pink/lime/cream/ink) · oxblood carried as the After Dark line color · TYPE: Fraunces (Nancy's own body serif) display · Archivo standing in for ES Rebond Grotesque · Spline Sans Mono for receipts</p>
   </div>
 </section>
 
@@ -601,7 +646,7 @@ footer a{color:var(--champagne-dim)}
 
 <footer>
   <div class="wrap">
-    NANCY SILK — concept board & game plan · Hello Nancy · July 7, 2026<br>
+    APRÈS by Nancy — silk line concept board & game plan · Hello Nancy · July 7, 2026<br>
     Research: 105-agent deep-research workflow (5-angle fan-out, 15 sources fetched, 3-vote adversarial verification per claim) + TrendTrack live ad pulls + Higgsfield concept generation.<br>
     Key sources: technavio.com (Apr 2026 sleepwear report) · taihusnow.com · dreamsilken.com · sino-silk.com · silkua.com · alibaba.com silk-lingerie showroom (verified live 07/07/26) · TrendTrack ad library.<br>
     Refuted & excluded: $52.6B luxury-lingerie sizing · $6.8B luxury-loungewear/38.5% silk share · 42% gifting share · $55–60/set FOB benchmark.
